@@ -35,24 +35,16 @@ As this script becomes more granular, and checking against Aither's resolutions,
    ```
 
 ## Docker
-1. Clone this repository:
-   ```bash
-   git clone https://github.com/brah/aither-exists-check.git
-   ```
-2. Navigate to the project directory:
-   ```bash
-   cd aither-exists-check
-   ```
-3. Build the docker image:
+1. Pull the docker image:
     ```bash
-   docker build -t aither-exists-check:latest .
+   docker pull ghcr.io/brah/aither-exists-check:main
    ```
-4. Run the docker image. Correct the paths below to map correct config file location and output directory.
+2. Run the docker image. Correct the paths below to map correct config file location and output directory.
     ```bash
     docker run --user 1000:1000 --name aither-exists --rm -it \
     -v ./config/apiKey.py:/aither-exists-check/apiKey.py \
     -v ./output:/output/ \
-    aither-exists-check:latest --radarr
+    aither-exists-check:main --radarr
     ```
 
 ## Configuration
